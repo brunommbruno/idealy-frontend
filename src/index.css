@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 body {
   margin: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,10 +20,63 @@ code {
   display: block;
 }
 
+.navbar {
+  margin-bottom: 6.5rem;
+}
+
 .navbar a {
   color: #fdfefd;
   font-size: 1.2rem;
 }
 .navbar a:visited {
   color: #fdfefd;
+}
+
+.idea-card {
+  border-radius: 1rem;
+  /* background-color: #fdfefd; */
+  height: 10rem;
+  width: 30%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.idea-card .description {
+  padding-top: 0rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-decoration: underline;
+  margin-bottom: 5rem;
+}
+
+.idea-card .likes {
+  width: 49%;
+  display: flex;
+}
+
+.idea-card .likes img {
+  height: 1rem;
+  margin-right: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.idea-card .likes p {
+  font-size: 1rem;
+  margin: 0rem;
+}
+.idea-card .user {
+  width: 49%;
+  display: flex;
+}
+
+.idea-card .user img {
+  height: 1rem;
+  margin-right: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.idea-card .user p {
+  font-size: 1rem;
+  margin: 0rem;
 }

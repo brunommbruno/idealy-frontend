@@ -1,5 +1,7 @@
 import { Component } from "react";
 import loading from "../../loading.svg";
+import thumbsUp from "../../thumbsUp.svg";
+import at from "../../at.png";
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class App extends Component {
 
   render() {
     const ideas = this.props.ideas;
+    const amount = this.props.amount;
 
     return (
       <div className="app">
@@ -28,7 +31,31 @@ class App extends Component {
         {!this.props.loaded ? (
           <img src={loading} className="loading" />
         ) : (
-          <div></div>
+          <div
+            className="idea-card"
+            style={{ backgroundColor: ideas[this.state.index].bk_color }}
+          >
+            <p
+              className="description"
+              style={{ color: ideas[this.state.index].txt_color }}
+            >
+              {ideas[this.state.index].description}
+            </p>
+            <div style={{ display: "flex", margin: "1rem" }}>
+              <div className="likes">
+                <img src={thumbsUp} />
+                <p style={{ color: ideas[this.state.index].txt_color }}>
+                  {ideas[this.state.index].likes}
+                </p>
+              </div>
+              <div className="user">
+                <img src={at} />
+                <p style={{ color: ideas[this.state.index].txt_color }}>
+                  {ideas[this.state.index].user}
+                </p>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     );
