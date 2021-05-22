@@ -31,31 +31,36 @@ class App extends Component {
         {!this.props.loaded ? (
           <img src={loading} className="loading" />
         ) : (
-          <div
-            className="idea-card"
-            style={{ backgroundColor: ideas[this.state.index].bk_color }}
-          >
-            <p
-              className="description"
-              style={{ color: ideas[this.state.index].txt_color }}
+          <>
+            <div
+              className="idea-card"
+              style={{ backgroundColor: ideas[this.state.index].bk_color }}
             >
-              {ideas[this.state.index].description}
-            </p>
-            <div style={{ display: "flex", margin: "1rem" }}>
-              <div className="likes">
-                <img src={thumbsUp} />
-                <p style={{ color: ideas[this.state.index].txt_color }}>
-                  {ideas[this.state.index].likes}
-                </p>
-              </div>
-              <div className="user">
-                <img src={at} />
-                <p style={{ color: ideas[this.state.index].txt_color }}>
-                  {ideas[this.state.index].user}
-                </p>
+              <p
+                className="description"
+                style={{ color: ideas[this.state.index].txt_color }}
+              >
+                {ideas[this.state.index].description}
+              </p>
+              <div style={{ display: "flex", margin: "1rem" }}>
+                <div className="likes">
+                  <img src={thumbsUp} />
+                  <p style={{ color: ideas[this.state.index].txt_color }}>
+                    {ideas[this.state.index].likes}
+                  </p>
+                </div>
+                <div className="user">
+                  <img src={at} />
+                  <p style={{ color: ideas[this.state.index].txt_color }}>
+                    {ideas[this.state.index].user}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+            <div className="generate">
+              <button>generate</button>
+            </div>
+          </>
         )}
       </div>
     );

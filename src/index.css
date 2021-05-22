@@ -39,6 +39,36 @@ code {
   width: 30%;
   margin: auto;
   padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.generate {
+  border-radius: 1rem;
+  /* background-color: #fdfefd; */
+  height: 10rem;
+  width: 30%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.generate button {
+  margin: 0 auto;
+  display: block;
+  border: 2px solid #4c9bb6;
+  padding: 0.6rem 1.7rem 0.6rem 1.7rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  background-color: rgb(131, 202, 226);
+  color: white;
+  cursor: pointer;
+}
+
+.generate button:hover {
+  border: 2px solid #3b7081;
+  background-color: white;
+  color: #3b7081;
 }
 
 .idea-card .description {
