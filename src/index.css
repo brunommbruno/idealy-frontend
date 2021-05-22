@@ -90,6 +90,7 @@ code {
   height: 1rem;
   margin-right: 0.6rem;
   margin-top: 0.2rem;
+  cursor: pointer;
 }
 
 .idea-card .likes p {

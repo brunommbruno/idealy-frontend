@@ -9,6 +9,22 @@ const reducer = (state, action) => {
         loaded: true,
         amount: state.amount + 1,
       };
+
+    case "UPDATE_IDEA":
+      return {
+        ...state,
+        ideas: state.ideas.map((idea) => {
+          if (idea.id !== action.payload.id) {
+            return idea;
+          } else {
+            return {
+              ...idea,
+              ...action.payload,
+            };
+          }
+        }),
+      };
+
     case "RESET":
       return initial;
     default:

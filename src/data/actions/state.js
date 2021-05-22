@@ -20,3 +20,12 @@ export const addIdea = ({
     },
   };
 };
+export const updateIdea = ({ id, likes }) => {
+  return {
+    type: "UPDATE_IDEA",
+    payload: {
+      id: id,
+      likes: likes,
+    },
+  };
+};

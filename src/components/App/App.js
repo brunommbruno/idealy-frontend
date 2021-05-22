@@ -12,6 +12,7 @@ class App extends Component {
     };
 
     this.randomiseIndex = this.randomiseIndex.bind(this);
+    this.likeIdea = this.likeIdea.bind(this);
   }
 
   componentDidMount() {
@@ -19,6 +20,10 @@ class App extends Component {
       this.props.getIdeas();
       console.log("loaded!");
     }
+  }
+
+  likeIdea(id, likes) {
+    this.props.likeIdea({ id: id, likes: likes });
   }
 
   randomiseIndex() {
@@ -31,6 +36,10 @@ class App extends Component {
 
     return (
       <div className="app">
+        <div className="likedPopup">
+          <p>Liked!</p>
+        </div>
+
         <div className="navbar">
           <a href="#">create your own</a>
         </div>
@@ -50,7 +59,16 @@ class App extends Component {
               </p>
               <div style={{ display: "flex", margin: "1rem" }}>
                 <div className="likes">
-                  <img alt="thumbs up" src={thumbsUp} />
+                  <img
+                    alt="thumbs up"
+                    onClick={() =>
+                      this.likeIdea(
+                        ideas[this.state.index].id,
+                        ideas[this.state.index].likes
+                      )
+                    }
+                    src={thumbsUp}
+                  />
                   <p style={{ color: ideas[this.state.index].txt_color }}>
                     {ideas[this.state.index].likes}
                   </p>

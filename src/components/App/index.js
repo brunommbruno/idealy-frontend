@@ -1,7 +1,7 @@
 import App from "./App";
 import { connect } from "react-redux";
 
-import { getIdeas } from "../../data/actions/api";
+import { getIdeas, likeIdea } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getIdeas: () => {
       dispatch(getIdeas());
+    },
+    likeIdea: ({ id, likes }) => {
+      dispatch(likeIdea({ id: id, likes: likes }));
     },
   };
 };

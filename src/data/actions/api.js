@@ -1,4 +1,4 @@
-import { addIdea } from "./state";
+import { addIdea, updateIdea } from "./state";
 import axios from "../../axios";
 
 export const getIdeas = () => {
@@ -17,6 +17,19 @@ export const getIdeas = () => {
           })
         );
       });
+    });
+  };
+};
+
+export const likeIdea = ({ id, likes }) => {
+  return (dispatch) => {
+    axios.put(`/ideas/${id}`, { likes: likes + 1 }).then(({ data }) => {
+      dispatch(
+        updateIdea({
+          id: data.id,
+          likes: data.likes,
+        })
+      );
     });
   };
 };
