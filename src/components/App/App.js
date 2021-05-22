@@ -62,7 +62,12 @@ class App extends Component {
               >
                 {ideas[this.state.index].description}
               </p>
-              <div style={{ display: "flex", margin: "1rem" }}>
+              <div
+                style={{
+                  display: "flex",
+                  margin: "1rem",
+                }}
+              >
                 <div className="likes">
                   <img
                     alt="thumbs up"

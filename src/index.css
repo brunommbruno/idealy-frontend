@@ -39,7 +39,7 @@ code {
   width: 30%;
   margin: auto;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
   border: 2px solid #4c9bb6;
 }
 
@@ -78,12 +78,13 @@ code {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
   text-decoration: underline;
-  margin-bottom: 5rem;
+  height: 6rem;
 }
 
 .idea-card .likes {
   width: 15%;
   display: flex;
+  margin-right: 1rem;
 }
 
 .idea-card .likes img {
