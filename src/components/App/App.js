@@ -9,6 +9,7 @@ class App extends Component {
 
     this.state = {
       index: 0,
+      liked: false,
     };
 
     this.randomiseIndex = this.randomiseIndex.bind(this);
@@ -24,11 +25,12 @@ class App extends Component {
 
   likeIdea(id, likes) {
     this.props.likeIdea({ id: id, likes: likes });
+    this.setState({ liked: true });
   }
 
   randomiseIndex() {
     const rndInt = Math.floor(Math.random() * this.props.amount) + 1;
-    this.setState({ index: rndInt });
+    this.setState({ index: rndInt, liked: false });
   }
 
   render() {
@@ -36,7 +38,10 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="likedPopup">
+        <div
+          className="likedPopup"
+          style={{ display: this.state.liked ? "block" : "none" }}
+        >
           <p>Liked!</p>
         </div>
 

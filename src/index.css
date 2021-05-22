@@ -112,3 +112,19 @@ code {
   font-size: 1rem;
   margin: 0rem;
 }
+
+.likedPopup {
+  background-color: #7cdebc;
+  border-radius: 0.6rem;
+  width: 20%;
+  margin: 0 auto 0 auto;
+  padding: 0.6rem;
+  position: absolute;
+  bottom: 4%;
+  left: 77%;
+}
+.likedPopup p {
+  text-align: center;
+  font-weight: bold;
+  color: #fdfefd;
+}
