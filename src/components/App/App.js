@@ -63,8 +63,8 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div className="generate">
-              <button onClick={() => this.randomiseIndex()}>generate</button>
+            <div className="randomise">
+              <button onClick={() => this.randomiseIndex()}>randomise</button>
             </div>
           </>
         )}

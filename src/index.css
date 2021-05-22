@@ -42,7 +42,7 @@ code {
   margin-bottom: 1rem;
 }
 
-.generate {
+.randomise {
   border-radius: 1rem;
   /* background-color: #fdfefd; */
   height: 10rem;
@@ -51,7 +51,7 @@ code {
   padding: 1rem;
 }
 
-.generate button {
+.randomise button {
   margin: 0 auto;
   display: block;
   border: 2px solid #4c9bb6;
@@ -65,7 +65,7 @@ code {
   cursor: pointer;
 }
 
-.generate button:hover {
+.randomise button:hover {
   border: 2px solid #3b7081;
   background-color: white;
   color: #3b7081;
