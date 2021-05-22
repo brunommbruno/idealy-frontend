@@ -10,6 +10,8 @@ class App extends Component {
     this.state = {
       index: 0,
     };
+
+    this.randomiseIndex = this.randomiseIndex.bind(this);
   }
 
   componentDidMount() {
@@ -19,9 +21,13 @@ class App extends Component {
     }
   }
 
+  randomiseIndex() {
+    const rndInt = Math.floor(Math.random() * this.props.amount) + 1;
+    this.setState({ index: rndInt });
+  }
+
   render() {
     const ideas = this.props.ideas;
-    const amount = this.props.amount;
 
     return (
       <div className="app">
@@ -29,7 +35,7 @@ class App extends Component {
           <a href="#">create your own</a>
         </div>
         {!this.props.loaded ? (
-          <img src={loading} className="loading" />
+          <img src={loading} alt="loading icon" className="loading" />
         ) : (
           <>
             <div
@@ -44,13 +50,13 @@ class App extends Component {
               </p>
               <div style={{ display: "flex", margin: "1rem" }}>
                 <div className="likes">
-                  <img src={thumbsUp} />
+                  <img alt="thumbs up" src={thumbsUp} />
                   <p style={{ color: ideas[this.state.index].txt_color }}>
                     {ideas[this.state.index].likes}
                   </p>
                 </div>
                 <div className="user">
-                  <img src={at} />
+                  <img src={at} alt="at icon" />
                   <p style={{ color: ideas[this.state.index].txt_color }}>
                     {ideas[this.state.index].user}
                   </p>
@@ -58,7 +64,7 @@ class App extends Component {
               </div>
             </div>
             <div className="generate">
-              <button>generate</button>
+              <button onClick={() => this.randomiseIndex()}>generate</button>
             </div>
           </>
         )}
