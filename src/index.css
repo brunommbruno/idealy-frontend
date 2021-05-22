@@ -17,3 +17,11 @@ code {
   margin: auto;
   display: block;
 }
+
+.navbar a {
+  color: #fdfefd;
+  font-size: 1.2rem;
+}
+.navbar a:visited {
+  color: #fdfefd;
+}

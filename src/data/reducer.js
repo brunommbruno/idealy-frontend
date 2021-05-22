@@ -7,6 +7,7 @@ const reducer = (state, action) => {
         ...state,
         ideas: [...state.ideas, action.payload],
         loaded: true,
+        amount: state.amount + 1,
       };
     case "RESET":
       return initial;

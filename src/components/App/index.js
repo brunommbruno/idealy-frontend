@@ -5,7 +5,9 @@ import { getIdeas } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
   return {
+    ideas: state.ideas,
     loaded: state.loaded,
+    amount: state.amount,
   };
 };
 
