@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     ideas: state.ideas,
     loaded: state.loaded,
-    amount: state.amount,
+    amount: state.amount - 1,
   };
 };
 

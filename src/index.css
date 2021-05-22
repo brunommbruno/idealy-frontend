@@ -40,6 +40,7 @@ code {
   margin: auto;
   padding: 1rem;
   margin-bottom: 1rem;
+  border: 2px solid #4c9bb6;
 }
 
 .randomise {
@@ -81,7 +82,7 @@ code {
 }
 
 .idea-card .likes {
-  width: 49%;
+  width: 15%;
   display: flex;
 }
 
@@ -96,7 +97,7 @@ code {
   margin: 0rem;
 }
 .idea-card .user {
-  width: 49%;
+  width: 10%;
   display: flex;
 }
 
