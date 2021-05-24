@@ -2,6 +2,7 @@ import { Component } from "react";
 import loading from "../../loading.svg";
 import thumbsUp from "../../thumbsUp.svg";
 import at from "../../at.png";
+import ideaSvg from "../../idea.svg";
 
 class App extends Component {
   constructor(props) {
@@ -96,6 +97,10 @@ class App extends Component {
             </div>
           </>
         )}
+        <div className="idea-footer">
+          <img src={ideaSvg} alt="idea icon" className="idea-icon" />
+          <p>{this.props.amount}</p>
+        </div>
       </div>
     );
   }
