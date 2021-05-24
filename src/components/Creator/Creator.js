@@ -8,10 +8,14 @@ class Creator extends Component {
       bk_color: "lightblue",
       description: "",
       user: "",
+      tags: "test",
+      likes: 0,
+      txt_color: "white",
     };
 
     this.handleBk_color = this.handleBk_color.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleBk_color(color) {
@@ -22,6 +26,18 @@ class Creator extends Component {
     let obj = {};
     obj[name] = e.currentTarget.value;
     this.setState(obj);
+  }
+
+  handleSubmit() {
+    this.props.postIdea({
+      bk_color: this.state.bk_color,
+      description: this.state.description,
+      user: this.state.user,
+      tags: this.state.tags,
+      likes: this.state.likes,
+      txt_color: this.state.txt_color,
+    });
+    window.location.reload();
   }
 
   render() {
@@ -42,8 +58,8 @@ class Creator extends Component {
               backgroundColor: "transparent",
               width: "95%",
               height: "4rem",
-              fontWeight: "bold",
-              border: "2px solid #4c9bb6",
+              border: "2px solid white",
+              borderRadius: "1rem",
             }}
             value={this.state.description}
             onChange={(e) => this.handleInput(e, `description`)}
@@ -56,12 +72,12 @@ class Creator extends Component {
               style={{
                 color: "white",
                 backgroundColor: "transparent",
-                border: "2px solid #4c9bb6",
+                border: "2px solid white",
                 width: "40%",
                 height: "1rem",
-                fontWeight: "bold",
                 marginTop: "1rem",
                 marginLeft: "0.5rem",
+                borderRadius: "1rem",
               }}
               value={this.state.user}
               onChange={(e) => this.handleInput(e, `user`)}
@@ -92,6 +108,9 @@ class Creator extends Component {
               onClick={() => this.handleBk_color("#e3da5f")}
             />
           </div>
+        </div>
+        <div className="randomise">
+          <button onClick={() => this.handleSubmit()}>submit</button>
         </div>
       </div>
     );

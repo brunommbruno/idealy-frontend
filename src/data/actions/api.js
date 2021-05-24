@@ -21,6 +21,26 @@ export const getIdeas = () => {
   };
 };
 
+export const postIdea = ({
+  bk_color,
+  description,
+  user,
+  tags,
+  likes,
+  txt_color,
+}) => {
+  return (dispatch) => {
+    axios.post("/ideas/", {
+      bk_color: bk_color,
+      description: description,
+      user: user,
+      tags: tags,
+      likes: likes,
+      txt_color: txt_color,
+    });
+  };
+};
+
 export const likeIdea = ({ id, likes }) => {
   return (dispatch) => {
     axios.put(`/ideas/${id}`, { likes: likes + 1 }).then(({ data }) => {
