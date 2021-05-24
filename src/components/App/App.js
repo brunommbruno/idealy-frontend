@@ -46,7 +46,7 @@ class App extends Component {
         </div>
 
         <div className="navbar">
-          <a href="#">create your own</a>
+          <a href="/asd">create your own</a>
         </div>
         {!this.props.loaded ? (
           <img src={loading} alt="loading icon" className="loading" />

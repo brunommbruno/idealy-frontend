@@ -61,15 +61,36 @@ code {
   font-weight: bold;
   border-radius: 0.8rem;
   font-size: 1rem;
-  background-color: rgb(131, 202, 226);
+  background-color: #5fb7d4;
   color: white;
   cursor: pointer;
 }
 
 .randomise button:hover {
   border: 2px solid #3b7081;
-  background-color: white;
+  background-color: #e3f8ff;
   color: #3b7081;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .idea-card {
+    width: 90%;
+  }
+
+  .randomise button {
+    width: 107%;
+    padding: 1rem;
+    margin: 0rem;
+  }
+
+  .randomise {
+    border-radius: 1rem;
+    height: 0rem;
+    width: 30%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 }
 
 .idea-card .description {
