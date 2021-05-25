@@ -176,6 +176,6 @@ code {
   outline: none;
   color: white;
   background-color: transparent;
-  border: 2px solid white;
   border-radius: 1rem;
+  font-weight: bold;
 }

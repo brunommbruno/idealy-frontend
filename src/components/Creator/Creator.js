@@ -29,15 +29,17 @@ class Creator extends Component {
   }
 
   handleSubmit() {
-    this.props.postIdea({
-      bk_color: this.state.bk_color,
-      description: this.state.description,
-      user: this.state.user,
-      tags: this.state.tags,
-      likes: this.state.likes,
-      txt_color: this.state.txt_color,
-    });
-    window.location.reload();
+    if (this.state.description.length < 60 && this.state.user.length < 15) {
+      this.props.postIdea({
+        bk_color: this.state.bk_color,
+        description: this.state.description,
+        user: this.state.user,
+        tags: this.state.tags,
+        likes: this.state.likes,
+        txt_color: this.state.txt_color,
+      });
+      window.location.reload();
+    }
   }
 
   render() {
@@ -57,6 +59,10 @@ class Creator extends Component {
               width: "95%",
               height: "3.5rem",
               padding: "0.5rem",
+              border:
+                this.state.description.length > 60
+                  ? "2px solid #db6363"
+                  : "2px solid white",
             }}
             value={this.state.description}
             onChange={(e) => this.handleInput(e, `description`)}
@@ -64,7 +70,7 @@ class Creator extends Component {
           <div
             style={{ display: "flex", marginTop: "0rem", fontWeight: "bold" }}
           >
-            <p>by: </p>
+            <p>@</p>
             <input
               style={{
                 width: "40%",
@@ -72,6 +78,10 @@ class Creator extends Component {
                 marginTop: "1rem",
                 marginLeft: "0.5rem",
                 padding: "0.6rem",
+                border:
+                  this.state.user.length > 15
+                    ? "2px solid #db6363"
+                    : "2px solid white",
               }}
               value={this.state.user}
               onChange={(e) => this.handleInput(e, `user`)}
@@ -103,6 +113,19 @@ class Creator extends Component {
             />
           </div>
         </div>
+        <p
+          style={{
+            color: "#db6363",
+            fontWeight: "bold",
+            textAlign: "center",
+            display:
+              this.state.description.length > 60 || this.state.user.length > 15
+                ? "block"
+                : "none",
+          }}
+        >
+          character limit reached
+        </p>
         <div className="randomise">
           <button onClick={() => this.handleSubmit()}>submit</button>
         </div>
