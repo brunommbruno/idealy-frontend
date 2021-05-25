@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       index: 0,
       liked: false,
+      likes: 0,
     };
 
     this.randomiseIndex = this.randomiseIndex.bind(this);
@@ -29,8 +30,13 @@ class App extends Component {
   }
 
   likeIdea(id, likes) {
-    this.props.likeIdea({ id: id, likes: likes });
-    this.setState({ liked: true });
+    if (!this.state.liked) {
+      this.props.likeIdea({ id: id, likes: likes });
+      this.setState({
+        liked: true,
+        likes: this.props.ideas[this.state.index].likes + 1,
+      });
+    }
   }
 
   randomiseIndex() {
@@ -93,7 +99,9 @@ class App extends Component {
                           <p
                             style={{ color: ideas[this.state.index].txt_color }}
                           >
-                            {ideas[this.state.index].likes}
+                            {this.state.liked
+                              ? this.state.likes
+                              : ideas[this.state.index].likes}
                           </p>
                         </div>
                         <div className="user">

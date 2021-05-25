@@ -38,7 +38,14 @@ class Creator extends Component {
         likes: this.state.likes,
         txt_color: this.state.txt_color,
       });
-      window.location.reload();
+      this.setState({
+        bk_color: "lightblue",
+        description: "",
+        user: "",
+        tags: "test",
+        likes: 0,
+        txt_color: "white",
+      });
     }
   }
 
