@@ -54,12 +54,9 @@ class Creator extends Component {
         >
           <input
             style={{
-              color: "white",
-              backgroundColor: "transparent",
               width: "95%",
-              height: "4rem",
-              border: "2px solid white",
-              borderRadius: "1rem",
+              height: "3.5rem",
+              padding: "0.5rem",
             }}
             value={this.state.description}
             onChange={(e) => this.handleInput(e, `description`)}
@@ -70,14 +67,11 @@ class Creator extends Component {
             <p>by: </p>
             <input
               style={{
-                color: "white",
-                backgroundColor: "transparent",
-                border: "2px solid white",
                 width: "40%",
-                height: "1rem",
+                height: "0.3rem",
                 marginTop: "1rem",
                 marginLeft: "0.5rem",
-                borderRadius: "1rem",
+                padding: "0.6rem",
               }}
               value={this.state.user}
               onChange={(e) => this.handleInput(e, `user`)}
